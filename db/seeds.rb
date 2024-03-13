@@ -28,4 +28,4 @@ end
   end
 end
 
-puts "Seed data successfully created"
+puts "Seed data successfully created
