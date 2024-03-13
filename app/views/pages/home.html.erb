@@ -1,2 +1,45 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+
+<body>
+    <header>
+        <input type="text" placeholder="Search">
+        <button>Search</button>
+        <nav>
+            <a href="/signup">Sign Up</a> |
+            <a href="/login">Log In</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Find the Tennis Court for you in Buenos Aires!</h1>
+            <!-- Ici, vous pourriez avoir une image de fond ou une balise img -->
+        </section>
+
+        <section class="search-filters">
+            <input type="date" id="date_input">
+            <input type="number" id="beginning_hr" placeholder="beginning hr">
+            <input type="number" id="beginning_min" placeholder="beginning min">
+            <input type="number" id="ending_hr" placeholder="ending hr">
+            <input type="number" id="ending_min" placeholder="ending min">
+            <button>Submit</button>
+        </section>
+
+        <section class="cards">
+            <div class="card">
+                <h2>Card Title</h2>
+                <p>Information about benefits</p>
+            </div>
+            <div class="card">
+                <h2>Card Title</h2>
+                <p>Information about how you can submit your court too</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Votre pied de page ici -->
+    </footer>
+
+    <!-- Insérez vos scripts JS en bas juste avant la fermeture du body -->
+</body>
+</html>

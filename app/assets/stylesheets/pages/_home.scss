@@ -1,1 +1,69 @@
 // Specific CSS for your home-page
+body {
+  font-family: Arial, sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: #f8f8f8;
+}
+
+header input, header button {
+  padding: 10px;
+  margin-right: 10px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  padding: 5px 10px;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+.hero {
+  text-align: center;
+  padding: 50px;
+  color: white;
+  background: url('path_to_your_background_image.jpg') no-repeat center center;
+  background-size: cover;
+}
+
+.search-filters {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.search-filters input, .search-filters button {
+  padding: 10px;
+  margin: 5px;
+}
+
+.cards {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.card {
+  width: 200px;
+  padding: 20px;
+  background: #ddd;
+  text-align: center;
+}
+
+.card h2 {
+  margin-bottom: 15px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #f8f8f8;
+}
