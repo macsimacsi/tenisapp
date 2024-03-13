@@ -1,59 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Courts Research</title>
-<!-- Ajoutez vos liens CSS ici -->
-</head>
-<body>
-<header>
-    <!-- Zone de recherche -->
-    <input type="text" placeholder="Search">
-    <button>Search</button>
-    <!-- Lien d'inscription et de connexion -->
-    <div>
-        <a href="/signup">Sign Up</a> |
-        <a href="/login">Log In</a>
+<h1>Courts</h1>
+<div class="container">
+  <div class="row">
+    <% @courts.each do |court|%>
+    <div class="col-3">
+      <div class="card">
+        <h2><%= court.name %></h2>
+        <p><%= court.address %></p>
+        <p><%= court.price %></p>
+        <%= link_to "ver", court_path(court), class:"btn btn-primary"%>
+      </div>
     </div>
-</header>
-
-<main>
-    <!-- Changement des requêtes de recherche -->
-    <div>
-        <label for="date_input">Date</label>
-        <input type="date" id="date_input">
-        <input type="number" placeholder="HH" min="0" max="23">
-        <input type="number" placeholder="MM" min="0" max="59">
-        <button>Submit</button>
-    </div>
-
-    <!-- Résultats de la recherche -->
-    <section>
-        <h2>Your search has 3 matches:</h2>
-        <article class="court">
-            <img src="path_to_image" alt="Court Image">
-            <h3>court_title</h3>
-            <p>court_description</p>
-            <p>address</p>
-            <button>Show</button>
-        </article>
-        <article class="court">
-            <img src="path_to_image" alt="Court Image">
-            <h3>court_title</h3>
-            <p>court_description</p>
-            <p>address</p>
-            <button>Show</button>
-        </article>
-        <article class="court">
-            <img src="path_to_image" alt="Court Image">
-            <h3>court_title</h3>
-            <p>court_description</p>
-            <p>address</p>
-            <button>Show</button>
-        </article>
-        <!-- Répétez l'article pour chaque résultat de recherche -->
-    </section>
-</main>
-</body>
-</html>
+    <% end %>
+  </div>
+</div>
