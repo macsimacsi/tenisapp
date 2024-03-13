@@ -1,11 +1,14 @@
 class BookingsController < ApplicationController
   def new
     @booking = Booking.new
+    @court = Court.find(params[:court_id])
+
   end
 
   def create
     @booking = Booking.new(booking_params)
-
+    @booking.user == current_user
+    @court = Court.find(params[:court_id])
     if @booking.save
       redirect_to booking_path(@booking)
     else
