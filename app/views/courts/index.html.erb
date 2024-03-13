@@ -1,2 +1,59 @@
-<h1>Courts#index</h1>
-<p>Find me in app/views/courts/index.html.erb</p>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recherche de Courts</title>
+<!-- Ajoutez vos liens CSS ici -->
+</head>
+<body>
+<header>
+    <!-- Zone de recherche -->
+    <input type="text" placeholder="Search">
+    <button>Search</button>
+    <!-- Lien d'inscription et de connexion -->
+    <div>
+        <a href="/signup">Sign Up</a> |
+        <a href="/login">Log In</a>
+    </div>
+</header>
+
+<main>
+    <!-- Changement des requêtes de recherche -->
+    <div>
+        <label for="date_input">Date</label>
+        <input type="date" id="date_input">
+        <input type="number" placeholder="HH" min="0" max="23">
+        <input type="number" placeholder="MM" min="0" max="59">
+        <button>Submit</button>
+    </div>
+
+    <!-- Résultats de la recherche -->
+    <section>
+        <h2>Your search has 3 matches:</h2>
+        <article class="court">
+            <img src="path_to_image" alt="Court Image">
+            <h3>court_title</h3>
+            <p>court_description</p>
+            <p>address</p>
+            <button>Show</button>
+        </article>
+        <article class="court">
+            <img src="path_to_image" alt="Court Image">
+            <h3>court_title</h3>
+            <p>court_description</p>
+            <p>address</p>
+            <button>Show</button>
+        </article>
+        <article class="court">
+            <img src="path_to_image" alt="Court Image">
+            <h3>court_title</h3>
+            <p>court_description</p>
+            <p>address</p>
+            <button>Show</button>
+        </article>
+        <!-- Répétez l'article pour chaque résultat de recherche -->
+    </section>
+</main>
+</body>
+</html>
