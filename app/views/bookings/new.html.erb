@@ -1,6 +1,6 @@
 <h1>New Booking</h1>
 
-<p>You are logged in as <%=  %></p>
+<p>You are logged in as <%=@current_user.email%></p>
 <p>The court you have chosen is <%= @court.id %></p>
 
 <%= render 'form', booking: @booking %>

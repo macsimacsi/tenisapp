@@ -2,16 +2,19 @@ class BookingsController < ApplicationController
   def new
     @booking = Booking.new
     @court = Court.find(params[:court_id])
+    @user = current_user
   end
 
   def create
     @booking = Booking.new(booking_params)
-    @booking.user == current_user
+    @booking.user = current_user
     @court = Court.find(params[:court_id])
+    @booking.court = @court
+
     if @booking.save
-      redirect_to booking_path(@booking)
+      redirect_to court_path(@court), notice: 'Booking was successfully created.'
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
