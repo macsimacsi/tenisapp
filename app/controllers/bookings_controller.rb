@@ -2,7 +2,6 @@ class BookingsController < ApplicationController
   def new
     @booking = Booking.new
     @court = Court.find(params[:court_id])
-
   end
 
   def create
@@ -15,7 +14,6 @@ class BookingsController < ApplicationController
       render :new
     end
   end
-
 
   def edit
     @booking = Booking.find(params[:id])
