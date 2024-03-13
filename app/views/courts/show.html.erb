@@ -7,4 +7,6 @@
 <p><strong>price:</strong> <%= @court.price %></p>
 <!-- Add more details as needed -->
 
+<%= link_to 'Book This Court', new_court_booking_path(@court), class: 'btn btn-primary' %>
+
 <%= link_to 'Back to Courts', courts_path %>
