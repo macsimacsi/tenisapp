@@ -1,0 +1,17 @@
+<%= simple_form_for [@court, @booking] do |f| %>
+  <div class="field">
+    <%= f.input :date, as: :date %>
+  </div>
+
+  <div class="field">
+    <%= f.input :beginning_time, as: :time, minute_step: 30, ignore_date: true %>
+  </div>
+
+  <div class="field">
+    <%= f.input :ending_time, as: :time, minute_step: 30, ignore_date: true %>
+  </div>
+
+  <div class="actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
