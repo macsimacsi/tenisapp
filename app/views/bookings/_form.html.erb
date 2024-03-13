@@ -1,0 +1,20 @@
+<%= form_for(@booking) do |f| %>
+  <div class="field">
+    <%= f.label :date %><br>
+    <%= f.date_field :date %>
+  </div>
+
+  <div class="field">
+    <%= f.label :beginning_time %><br>
+    <%= f.time_select :beginning_time, { minute_step: 30, ignore_date: true } %>
+  </div>
+
+  <div class="field">
+    <%= f.label :ending_time %><br>
+    <%= f.time_select :ending_time, { minute_step: 30, ignore_date: true } %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
