@@ -5,30 +5,15 @@
   padding: 16px;
   margin-bottom: 16px;
 
-  .name {
+  .card-title {
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 8px;
     color: #333;
   }
 
-  .content {
+  .card-text {
     font-size: 14px;
     color: #666;
-  }
-
-  .button {
-    display: inline-block;
-    padding: 8px 16px;
-    background-color: #007bff;
-    color: #fff;
-    border-radius: 4px;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-    cursor: pointer;
-
-    &:hover {
-      background-color: #0056b3;
-    }
   }
 }

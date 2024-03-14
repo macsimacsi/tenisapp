@@ -1,11 +1,9 @@
-<% @courts.each do |court|%>
-<div class="col-3">
-  <div class="card">
-    <h2 class="name"><%= court.name %></h2>
-    <p class="content"><%= court.address %></p>
-    <p class="content"><%= court.price %></p>
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title"><%= court.name %></h5>
+    <p class="card-text"><%= court.address %></p>
+    <p class="card-text"><%= court.price %></p>
     <%= cl_image_tag court.photo.key, height: 180, width: 180, crop: :fill %>
-    <%= link_to "ver", court_path(court), class:"btn btn-primary"%>
+    <%= link_to "View Details", court_path(court), class: "btn btn-primary" %>
   </div>
 </div>
-<% end %>
