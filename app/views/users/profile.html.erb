@@ -1,0 +1,65 @@
+<!-- app/views/users/profile.html.erb -->
+<h1>Welcome to your dashboard!</h1>
+<!-- app/views/users/profile.html.erb -->
+<h1>My Bookings</h1>
+<% if @bookings.empty? %>
+  <p>No bookings registered</p>
+<% else %>
+  <table>
+    <thead>
+      <tr>
+        <th>Court Name</th>
+        <th>Date</th>
+        <th>Beginning Time</th>
+        <th>Ending Time</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @bookings.each do |booking| %>
+        <tr>
+          <td><%= booking.court.name %></td>
+          <td><%= booking.date %></td>
+          <td><%= booking.beginning_time.strftime("%H:%M") %></td>
+          <td><%= booking.ending_time.strftime("%H:%M") %></td>
+          <td>
+            <%= link_to "Edit", edit_court_booking_path(booking.court, booking), class: "btn btn-secondary" %>
+            <%= link_to "Delete", booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
+<h1>My Courts</h1>
+<% if @courts.empty? %>
+  <p>No courts registered</p>
+<% else %>
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Court Name</th>
+          <th scope="col">Address</th>
+          <th scope="col">Description</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @courts.each do |court| %>
+          <tr>
+            <td><%= court.name %></td>
+            <td><%= court.address %></td>
+            <td><%= court.description %></td>
+            <td>
+              <%= link_to "Edit", edit_court_path(court), class: "btn btn-secondary" %>
+              <%= link_to "Delete", court_path(court), method: :delete, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger" %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+<% end %>
+
+<%= link_to "Add Court", new_court_path, class: "btn btn-primary" %>
+   <%= link_to "Delete Account", delete_user_account_path, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger" %>
