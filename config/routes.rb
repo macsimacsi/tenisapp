@@ -7,4 +7,7 @@ Rails.application.routes.draw do
   end
 
   resources :bookings, only: [:destroy]
+
+  delete 'profile', to: 'users#destroy', as: :delete_user_account
+  get 'profile', to: 'users#profile'
 end
