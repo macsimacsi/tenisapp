@@ -18,19 +18,20 @@ users_attributes.each do |user_attributes|
 end
 # Courts
 courts_attributes = [
-  { name: 'Best court', address: 'Best Street', description: 'Best tennis court', price: 10000 },
-  { name: 'Great court', address: 'Great Street', description: 'Greatest tennis court', price: 15000 },
-  { name: 'Good court', address: 'Good Street', description: 'Good tennis court', price: 20000 },
-  { name: 'Nice court', address: 'Nice Street', description: 'Nice tennis court', price: 25000 },
-  { name: 'Cool court', address: 'Cool Street', description: 'Cool tennis court', price: 30000 },
-  { name: 'Awesome court', address: 'Awesome Street', description: 'Awesome tennis court', price: 35000 }
+  { name: 'Best court', address: 'Best Street', description: 'Best tennis court', price: 10000, photo:"https://res.cloudinary.com/dsmd2uryj/image/upload/f_auto,q_auto/cld-sample-5" },
+  { name: 'Great court', address: 'Great Street', description: 'Greatest tennis court', price: 15000, photo:"https://res.cloudinary.com/dsmd2uryj/image/upload/f_auto,q_auto/cld-sample-5" },
+  { name: 'Good court', address: 'Good Street', description: 'Good tennis court', price: 20000, photo:"https://res.cloudinary.com/dsmd2uryj/image/upload/f_auto,q_auto/cld-sample-5" },
+  { name: 'Nice court', address: 'Nice Street', description: 'Nice tennis court', price: 25000, photo:"https://res.cloudinary.com/dsmd2uryj/image/upload/f_auto,q_auto/cld-sample-5" },
+  { name: 'Cool court', address: 'Cool Street', description: 'Cool tennis court', price: 30000, photo:"https://res.cloudinary.com/dsmd2uryj/image/upload/f_auto,q_auto/cld-sample-5" },
+  { name: 'Awesome court', address: 'Awesome Street', description: 'Awesome tennis court', price: 35000, photo:"https://res.cloudinary.com/dsmd2uryj/image/upload/f_auto,q_auto/cld-sample-5" }
 ]
 courts_attributes.each do |court_attributes|
   court = Court.find_or_create_by!(name: court_attributes[:name]) do |court|
     court.address = court_attributes[:address]
     court.description = court_attributes[:description]
     court.price = court_attributes[:price]
-    court.user = User.first # Opcional: Asigna un usuario a cada corte si lo deseas
+    court.photo = court_attributes[:photo]
+    court.user = User.first
   end
   # Agrega una foto de Cloudinary a cada corte
   file = URI.open("https://res.cloudinary.com/dsmd2uryj/image/upload/f_auto,q_auto/cld-sample-5")
