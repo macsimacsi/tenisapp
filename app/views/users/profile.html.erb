@@ -23,7 +23,7 @@
           <td><%= booking.ending_time.strftime("%H:%M") %></td>
           <td>
             <%= link_to "Edit", edit_court_booking_path(booking.court, booking), class: "btn btn-secondary" %>
-            <%= link_to "Delete", court_booking_path(booking.court, booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger" %>
+            <%= link_to "Delete", booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger" %>
           </td>
         </tr>
       <% end %>
