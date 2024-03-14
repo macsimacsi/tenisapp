@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   end
 
   resources :bookings, only: [:destroy]
+  get 'profile', to: 'users#profile'
 end

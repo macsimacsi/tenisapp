@@ -1,0 +1,29 @@
+<!-- app/views/users/profile.html.erb -->
+<h1>Welcome to your dashboard!</h1>
+<!-- app/views/users/profile.html.erb -->
+<h1>My Bookings</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Court</th>
+      <th>Time</th>
+      <!-- Other booking attributes -->
+    </tr>
+  </thead>
+  <tbody>
+    <% @bookings.each do |booking| %>
+      <tr>
+        <td><%= booking.court.name %></td>
+        <td><%= booking.date %></td>
+        <td><%= booking.beginning_time.strftime("%H:%M") %></td>
+        <td><%= booking.ending_time.strftime("%H:%M") %></td>
+        <!-- Display other booking attributes -->
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<h1>My Courts</h1>
+  <% @courts.each do |court| %>
+    <li><%= court.id %></li>
+  <% end %>
+</ul>
