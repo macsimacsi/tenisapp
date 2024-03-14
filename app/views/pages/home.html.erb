@@ -1,25 +1,21 @@
-
- <section class="hero">
-            <h1>Find the Tennis Court for you in Buenos Aires!</h1>
-            <!-- Ici, vous pourriez avoir une image de fond ou une balise img -->
-        </section>
-
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://ca-times.brightspotcdn.com/dims4/default/82ecd82/2147483647/strip/false/crop/1200x800+0+0/resize/1200x800!/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2F77%2F53%2F01c3331b45179e421a32bdaefa34%2Flat-tennis-1-thumbnail2.jpg);">
+  <div class="container">
+    <h1 class="text-center">Find the Tennis Court for you in Buenos Aires!</h1>
         <section class="search-filters">
-            <input type="date" id="date_input">
-            <input type="number" id="beginning_hr" placeholder="beginning hr">
-            <input type="number" id="beginning_min" placeholder="beginning min">
-            <input type="number" id="ending_hr" placeholder="ending hr">
-            <input type="number" id="ending_min" placeholder="ending min">
-            <button>Submit</button>
+          <input type="date" id="date_input">
+          <%= link_to "Find a Court", courts_path, class:"btn btn-primary" %>
         </section>
+  </div>
+</div>
 
-        <section class="cards">
-            <div class="card">
-                <h2>Card Title</h2>
-                <p>Information about benefits</p>
-            </div>
-            <div class="card">
-                <h2>Card Title</h2>
-                <p>Information about how you can submit your court too</p>
-            </div>
-        </section>
+<section class="cards">
+    <div class="card">
+        <h2>Why Choose Us?</h2>
+        <p>Discover the best courts with detailed descriptions, high-quality images, and user reviews.</p>
+    </div>
+    <div class="card">
+        <h2>Add Your Court</h2>
+        <p>Do you have a tennis court? List it on our platform and increase your visibility.</p>
+        <%= link_to "List Your Court", new_court_path, class: "btn btn-secondary" %>
+    </div>
+</section>
