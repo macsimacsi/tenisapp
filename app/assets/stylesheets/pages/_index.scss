@@ -1,2 +1,38 @@
 // Import page-specific CSS files here.
-@import "home";
+body {
+  font-family: 'Arial', sans-serif;
+  background: #f4f4f4; /* Couleur de fond légère pour tout le body */
+}
+
+/* ... Autres styles ... */
+.card-content {
+  flex-grow: 1; /* Cela permettra à votre contenu de remplir l'espace disponible */
+}
+
+.card {
+  width: 100%; /* Utilisez 100% pour que la largeur soit responsive */
+  padding: 30px; /* Plus d'espace à l'intérieur */
+  height: 100%;
+  background: #ffffff; /* Fond blanc pour les cartes */
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Ombre douce pour un effet de profondeur */
+  border-radius: 5px; /* Bordures arrondies */
+  margin-bottom: 20px; /* Espace en dessous de chaque carte */
+  display: flex;
+  flex-direction: column;
+}
+
+.card h2 {
+  color: #333; /* Couleur foncée pour les titres pour plus de lisibilité */
+  margin-bottom: 20px;
+}
+
+/* ... Autres styles ... */
+
+.btn-primary {
+  background-color: #0056b3; /* Couleur du bouton */
+  border: none; /* Retirer la bordure du bouton */
+  padding: 10px 20px; /* Padding plus grand pour le bouton */
+  margin-top: 15px; /* Espace au-dessus du bouton */
+  border-radius: 3px; /* Bordures arrondies pour le bouton */
+}

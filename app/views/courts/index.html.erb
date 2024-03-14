@@ -1,13 +1,15 @@
 <h1>Courts</h1>
 <div class="container">
   <div class="row">
-    <% @courts.each do |court|%>
-    <div class="col-3">
-      <div class="card">
-        <h2><%= court.name %></h2>
-        <p><%= court.address %></p>
-        <p><%= court.price %></p>
-        <%= link_to "ver", court_path(court), class:"btn btn-primary"%>
+    <% @courts.each do |court| %>
+    <div class="col-md-3 mb-4">
+      <div class="card my-2 d-flex flex-column"> <!-- Ajout de Flexbox ici -->
+        <div class="card-content flex-grow-1"> <!-- Ajout de flex-grow-1 ici -->
+          <h2><%= court.name %></h2>
+          <p><%= court.address %></p>
+          <p><%= court.price %></p>
+        </div>
+        <%= link_to "See court", court_path(court), class: "btn btn-primary mt-auto" %> <!-- mt-auto pour pousser le bouton vers le bas -->
       </div>
     </div>
     <% end %>
