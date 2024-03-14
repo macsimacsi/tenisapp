@@ -1,12 +1,28 @@
-.navbar-lewagon {
+.navbar-tenisapp
   justify-content: space-between;
-  background: white;
-}
+  background: #F5f5f5f5;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+  height: 60px;
+  border-bottom: 1px solid #e5e5e5;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+  z-index: 1000
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
+  .navbar-collapse
+    flex-grow: 0;
+    display: flex;
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
-}
+  .navbar-brand img
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+
+  .logo
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
