@@ -5,7 +5,7 @@
   <div class="row">
   <% @courts.each do |court| %>
     <div class="col-md-4">
-      <%= render partial: 'courts/card', locals: { court: court } %>
+      <%= render partial: '_card', locals: { court: court } %>
     </div>
   <% end %>
 </div>
