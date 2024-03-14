@@ -1,2 +1,14 @@
-<h1>Courts#edit</h1>
-<p>Find me in app/views/courts/edit.html.erb</p>
+<h1>Edit Court</h1>
+
+<p>You are logged in as <%=@current_user.email%></p>
+<p>The court you have chosen is <%= @court.name %></p>
+
+<div class="container">
+  <%= simple_form_for(@court) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :address %>
+    <%= f.input :description %>
+    <%= f.input :price %>
+    <%= f.submit %>
+  <% end %>
+</div>

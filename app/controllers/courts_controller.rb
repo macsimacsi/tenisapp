@@ -1,4 +1,5 @@
 class CourtsController < ApplicationController
+  before_action :authenticate_user!
   def index
     # Your code for index action here
     @courts = Court.all
@@ -17,6 +18,7 @@ class CourtsController < ApplicationController
   def edit
     # Your code for edit action here
     @court = Court.find(params[:id])
+    @court.user = current_user
   end
 
   def create
@@ -44,7 +46,7 @@ class CourtsController < ApplicationController
     # Your code for destroy action here
     @court = Court.find(params[:id])
     @court.destroy
-    redirect_to courts_path
+    redirect_to profile_path
   end
 
   private
