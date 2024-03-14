@@ -8,7 +8,7 @@
           <h2><%= court.name %></h2>
           <p><%= court.address %></p>
           <p><%= court.price %></p>
-          
+          <%= cl_image_tag("https://res.cloudinary.com/dsmd2uryj/image/upload/f_auto,q_auto/cld-sample-5", width: 150, height: 150, crop: :fill) %>
         </div>
         <%= link_to "See court", court_path(court), class: "btn btn-primary mt-auto" %> <!-- mt-auto pour pousser le bouton vers le bas -->
       </div>
