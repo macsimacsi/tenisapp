@@ -45,8 +45,14 @@ nav a:hover {
   margin: 5px;
 }
 
-.cards {
+.card-container {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cards {
+  // display: flex;
   justify-content: space-around;
   padding: 20px;
 }
@@ -56,6 +62,7 @@ nav a:hover {
   padding: 20px;
   background: #ddd;
   text-align: center;
+  // display: flex;
 }
 
 .card h2 {

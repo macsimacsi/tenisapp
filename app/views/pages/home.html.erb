@@ -7,19 +7,18 @@
         </section>
   </div>
 </div>
-
-<section class="cards">
-
-  <div class="card">
-    <h2>Card Title</h2>
-    <p>Information about benefits</p>
-  </div>
-<div class="card">
-    <h2>Submit </h2>
-    <p>You can submit your business here.</p>
-</div>
 </section>
-
+<div class="card-container">
+  <div class="card">
+      <h2>Why Choose Us?</h2>
+      <p>Discover the best courts with detailed descriptions, high-quality images, and user reviews.</p>
+  </div>
+  <div class="card">
+      <h2>Add Your Court</h2>
+      <p>Do you have a tennis court? List it on our platform and increase your visibility.</p>
+      <%= link_to "List Your Court", new_court_path, class: "btn btn-secondary" %>
+  </div>
+</div>
 <section class="categories">
   <div class="container-categories">
     <div class="card-category col-3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://turismo.buenosaires.gob.ar/sites/turismo/files/planetario_agua_1200_2.jpg)">
@@ -27,16 +26,6 @@
     </div>
     <div class="card-category col-3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://wander-argentina.com/wp-content/uploads/2012/02/WA-barrios-barrancasdebelgrano.jpg)">
       Belgrano
-
-    <div class="card">
-        <h2>Why Choose Us?</h2>
-        <p>Discover the best courts with detailed descriptions, high-quality images, and user reviews.</p>
-    </div>
-    <div class="card">
-        <h2>Add Your Court</h2>
-        <p>Do you have a tennis court? List it on our platform and increase your visibility.</p>
-        <%= link_to "List Your Court", new_court_path, class: "btn btn-secondary" %>
-    </div>
     <div class="card-category col-3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.disfrutabuenosaires.com/f/argentina/buenos-aires/guia/recoleta.jpg)">
       Recoleta
     </div>
