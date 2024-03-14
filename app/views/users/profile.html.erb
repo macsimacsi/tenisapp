@@ -14,11 +14,12 @@
     <% @bookings.each do |booking| %>
     <tr>
         <td><%= booking.court.name %></td>
+        <td><%= booking.date%></td>
         <td><%= booking.beginning_time.strftime("%H:%M") %></td>
         <td><%= booking.ending_time.strftime("%H:%M") %></td>
         <td>
           <%= link_to "Edit", edit_court_booking_path(booking.court, booking), class: "btn btn-secondary" %>
-          <%= link_to "Delete", booking_path(booking), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+          <%= link_to "Delete", court_booking_path(booking.court, booking), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
         </td>
       </tr>
     <% end %>
@@ -27,6 +28,7 @@
 <h1>My Courts</h1>
   <% @courts.each do |court| %>
     <li><%= court.id %></li>
-    <%= link_to "Add Court", new_court_path, class: "btn btn-primary" %>
   <% end %>
 </ul>
+<%= link_to "Add Court", new_court_path, class: "btn btn-primary" %>
+    <%= link_to "Delete Account", user_registration_path, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
