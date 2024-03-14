@@ -1,12 +1,13 @@
+<div class="container mt-5 mb-3">
+<h1 class="mb-3">Court Details</h1>
 
-<h1>Court Details</h1>
-
-<p><strong>Name:</strong> <%= @court.name %></p>
-<p><strong>Adress:</strong> <%= @court.address %></p>
-<p><strong>Description:</strong> <%= @court.description %></p>
-<p><strong>price:</strong> <%= @court.price %></p>
+<p class="mb-10"><strong>Name:</strong> <%= @court.name %></p>
+<p class="mb-10"><strong>Adress:</strong> <%= @court.address %></p>
+<p class="mb-10"><strong>Description:</strong> <%= @court.description %></p>
+<p class="mb-10"><strong>price:</strong> <%= @court.price %></p>
 <!-- Add more details as needed -->
 
 <%= link_to 'Book This Court', new_court_booking_path(@court), class: 'btn btn-primary' %>
 
 <%= link_to 'Back to Courts', courts_path %>
+</div>
