@@ -1,4 +1,6 @@
 class BookingsController < ApplicationController
+  before_action :authenticate_user!
+
   def new
     @booking = Booking.new
     @court = Court.find(params[:court_id])
@@ -20,23 +22,27 @@ class BookingsController < ApplicationController
 
   def edit
     @booking = Booking.find(params[:id])
+    @booking.user = current_user
+    @court = Court.find(params[:court_id])
   end
 
   def update
     @booking = Booking.find(params[:id])
 
     if @booking.update(booking_params)
-      redirect_to @booking
+      redirect_to profile_path, notice: 'Booking was successfully updated.'
     else
       render :edit
     end
   end
 
   def destroy
+    # @booking.user = current_user
+    # @court = Court.find(params[:court_id])
     @booking = Booking.find(params[:id])
     @booking.destroy
+      redirect_to profile_path, notice: 'Booking was successfully deleted'
 
-    redirect_to bookings_url
   end
 
   private

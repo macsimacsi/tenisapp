@@ -1,2 +1,44 @@
-<h1>Courts#new</h1>
-<p>Find me in app/views/courts/new.html.erb</p>
+<%= form_with model: @court, local: true do |form| %>
+
+  <% if @court.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@court.errors.count, "error") %> prohibited this court from being saved:</h2>
+      <ul>
+        <% @court.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-3"></div>
+    <div class="col-6">
+      <div class="field mb-3">
+        <%= form.label :name %>
+        <%= form.text_field :name %>
+      </div>
+
+      <div class="field mb-3">
+        <%= form.label :address %>
+        <%= form.text_field :address %>
+      </div>
+
+      <div class="field mb-3">
+        <%= form.label :description %>
+        <%= form.text_area :description %>
+      </div>
+
+      <div class="field mb-3">
+        <%= form.label :price %>
+        <%= form.number_field :price %>
+      </div>
+
+      <div class="actions">
+        <%= form.submit %>
+      </div>
+    </div>
+    <div class="col-3"></div>
+  </div>
+</div>
+<% end %>

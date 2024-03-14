@@ -24,7 +24,7 @@ class CourtsController < ApplicationController
     @court = Court.new(court_params)
     @court.user = current_user
     if @court.save
-      redirect_to court_path(@court)
+      redirect_to court_path(@court), notice: 'Court was successfully created.'
     else
       render :new
     end
