@@ -37,14 +37,12 @@ class BookingsController < ApplicationController
   end
 
   def destroy
-    @booking.user = current_user
-    @court = Court.find(params[:court_id])
+    # @booking.user = current_user
+    # @court = Court.find(params[:court_id])
     @booking = Booking.find(params[:id])
-    if @booking.destroy
-      redirect_to profile, notice: 'Booking was successfully deleted'
-    else
-      render :new, status: :unprocessable_entity
-    end
+    @booking.destroy
+      redirect_to profile_path, notice: 'Booking was successfully deleted'
+
   end
 
   private
