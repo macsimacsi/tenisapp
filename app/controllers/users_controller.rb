@@ -8,6 +8,7 @@ class UsersController < ApplicationController
   end
 
   def destroy
+    @user = current_user
     current_user.destroy
     sign_out current_user
     redirect_to root_path, notice: "Your account has been successfully deleted."
