@@ -2,33 +2,62 @@
 <h1>Welcome to your dashboard!</h1>
 <!-- app/views/users/profile.html.erb -->
 <h1>My Bookings</h1>
-<table>
-  <thead>
-    <tr>
-      <th>Court</th>
-      <th>Time</th>
-      <!-- Other booking attributes -->
-    </tr>
-  </thead>
-  <tbody>
-    <% @bookings.each do |booking| %>
-    <tr>
-        <td><%= booking.court.name %></td>
-        <td><%= booking.date%></td>
-        <td><%= booking.beginning_time.strftime("%H:%M") %></td>
-        <td><%= booking.ending_time.strftime("%H:%M") %></td>
-        <td>
-          <%= link_to "Edit", edit_court_booking_path(booking.court, booking), class: "btn btn-secondary" %>
-          <%= link_to "Delete", booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger" %>
-        </td>
+<% if @bookings.empty? %>
+  <p>No bookings registered</p>
+<% else %>
+  <table>
+    <thead>
+      <tr>
+        <th>Court Name</th>
+        <th>Date</th>
+        <th>Beginning Time</th>
+        <th>Ending Time</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <% @bookings.each do |booking| %>
+        <tr>
+          <td><%= booking.court.name %></td>
+          <td><%= booking.date %></td>
+          <td><%= booking.beginning_time.strftime("%H:%M") %></td>
+          <td><%= booking.ending_time.strftime("%H:%M") %></td>
+          <td>
+            <%= link_to "Edit", edit_court_booking_path(booking.court, booking), class: "btn btn-secondary" %>
+            <%= link_to "Delete", court_booking_path(booking.court, booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
 <h1>My Courts</h1>
-  <% @courts.each do |court| %>
-    <li><%= court.id %></li>
-  <% end %>
-</ul>
+<% if @courts.empty? %>
+  <p>No courts registered</p>
+<% else %>
+  <table>
+    <thead>
+      <tr>
+        <th>Court Name</th>
+        <th>Address</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @courts.each do |court| %>
+        <tr>
+          <td><%= court.name %></td>
+          <td><%= court.address %></td>
+           <td><%= court.description %></td>
+          <td>
+            <%= link_to "Edit", edit_court_path(court), class: "btn btn-secondary" %>
+            <%= link_to "Delete", court_path(court), method: :delete, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger" %>
+          </td>
+        </tr>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
 <%= link_to "Add Court", new_court_path, class: "btn btn-primary" %>
    <%= link_to "Delete Account", delete_user_account_path, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger" %>
