@@ -8,5 +8,6 @@ Rails.application.routes.draw do
 
   resources :bookings, only: [:destroy]
 
+  delete 'users', to: 'users#destroy'
   get 'profile', to: 'users#profile'
 end
