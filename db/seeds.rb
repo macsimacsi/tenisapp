@@ -1,40 +1,41 @@
-require 'cloudinary'
-require 'faker'
+require 'open-uri'
 
-def upload_to_cloudinary(image_path)
-  Cloudinary::Uploader.upload(image_path)['secure_url']
-end
-
-users_data = [
-  { name: Faker::Name.name, email: Faker::Internet.email, password: 'password' }, # Generate data using Faker
-  { name: 'User 1', email: 'user1@example.com', password: 'password1' },
-  { name: 'User 2', email: 'user2@example.com', password: 'password2' },
+User.destroy_all
+Court.destroy_all
+# Users
+# Users
+users_attributes = [
+  { email: 'test@gmail.com', password: '123456' },
+  { email: 'mike@gmail.com', password: 'KansasCity' },
+  { email: 'brandon@gmail.com', password: 'IloveKansas' },
+  { email: 'jennifer@gmail.com', password: 'LongliveAmerica' },
+  { email: 'Bob@gmail.com', password: 'AMERICAAAA' }
 ]
-
-courts_data = [
-  { name: 'Court A', address: 'Address A', description: 'Description A', price: 50.0, image_path: 'path_to_image1.jpg' },
-  { name: 'Court B', address: 'Address B', description: 'Description B', price: 40.0, image_path: 'path_to_image2.jpg' },
-  { name: 'Court C', address: 'Address C', description: 'Description C', price: 60.0, image_path: 'path_to_image3.jpg' },
-  { name: 'Court D', address: 'Address D', description: 'Description D', price: 45.0, image_path: 'path_to_image4.jpg' },
-  { name: 'Court E', address: 'Address E', description: 'Description E', price: 55.0, image_path: 'path_to_image5.jpg' },
-]
-
-shuffled_courts = courts_data.shuffle
-
-users_data.each do |user_attrs|
-  user = User.create!(user_attrs)
-
-  3.times do
-    court_attrs = shuffled_courts.pop
-    image_url = upload_to_cloudinary(court_attrs[:image_path])
-    user.courts.create!(
-      name: court_attrs[:name],
-      address: court_attrs[:address],
-      description: court_attrs[:description],
-      price: court_attrs[:price],
-      photo: image_url
-    )
+users_attributes.each do |user_attributes|
+  User.find_or_create_by!(email: user_attributes[:email]) do |user|
+    user.password = user_attributes[:password]
   end
 end
-
+# Courts
+courts_attributes = [
+  { name: 'Best court', address: 'Best Street', description: 'Best tennis court', price: 10000},
+  { name: 'Great court', address: 'Great Street', description: 'Greatest tennis court', price: 15000},
+  { name: 'Good court', address: 'Good Street', description: 'Good tennis court', price: 20000},
+  { name: 'Nice court', address: 'Nice Street', description: 'Nice tennis court', price: 25000},
+  { name: 'Cool court', address: 'Cool Street', description: 'Cool tennis court', price: 30000},
+  { name: 'Awesome court', address: 'Awesome Street', description: 'Awesome tennis court', price: 35000}
+]
+courts_attributes.each do |court_attributes|
+  court = Court.find_or_create_by!(name: court_attributes[:name]) do |court|
+    court.address = court_attributes[:address]
+    court.description = court_attributes[:description]
+    court.price = court_attributes[:price]
+    court.photo = court_attributes[:photo]
+    court.user = User.first
+  end
+  # Agrega una foto de Cloudinary a cada corte
+  file = URI.open("https://res.cloudinary.com/dsmd2uryj/image/upload/f_auto,q_auto/cld-sample-5")
+  court.photo.attach(io: file, filename: "court_image.png", content_type: "image/png")
+  court.save!
+end
 puts "Seed data successfully created"
