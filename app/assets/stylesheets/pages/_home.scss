@@ -51,6 +51,12 @@ footer {
   background: #f8f8f8;
 }
 
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 10px; // Reduced the gap between cards
+}
+
 .container-categories {
   display: flex;
   justify-content: space-around;

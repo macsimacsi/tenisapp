@@ -1,9 +1,9 @@
 <div class="title-container">
-  <h1 class="">Courts</h1>
+  <h1>Courts</h1>
 </div>
-<div class="card-container">
+<div class="cards-wrapper">
   <% @courts.each do |court| %>
-    <div class="col-md-4">
+    <div class="card-container">
       <%= render partial: 'shared/card', locals: { court: court } %>
     </div>
   <% end %>
