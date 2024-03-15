@@ -53,6 +53,6 @@ class CourtsController < ApplicationController
 
   # Your private methods here
   def court_params
-    params.require(:court).permit(:name, :address, :description, :price, :photo)
+    params.require(:court).permit(:name, :address, :description, :price, photos: [])
   end
 end
