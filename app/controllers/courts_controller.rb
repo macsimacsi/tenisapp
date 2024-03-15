@@ -1,8 +1,10 @@
 class CourtsController < ApplicationController
   before_action :authenticate_user!
   def index
-    # Your code for index action here
     @courts = Court.all
+    if params[:query].present?
+      @courts = Court.search(params[:query])
+    end
   end
 
   def show
