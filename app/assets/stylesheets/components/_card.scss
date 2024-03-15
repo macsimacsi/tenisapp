@@ -42,6 +42,14 @@
     color: #FFFFFF; // Or any color that fits your design
   }
 
+  img {
+    width: 100%; // Image width set to 100%
+    height: 350px; // Set the desired height for the image
+    object-fit: cover; // Maintain aspect ratio and cover container
+    border-radius: 8px; // Optional: Add border radius to the image
+    margin-bottom: 10px; // Optional: Add margin below the image
+  }
+
 }
 
 .cards-wrapper {
@@ -62,6 +70,7 @@
   margin-top: 16px;
   padding: 16px;
   text-align: center;
+  max-width: 80%;
 }
 
 .button-main {
@@ -84,4 +93,6 @@
     background-color: #3b743b;
      // Color change on hover
   }
+
+
 }

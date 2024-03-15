@@ -2,9 +2,12 @@
   <h1>Courts</h1>
 </div>
 <div class="cards-wrapper">
+<div class="card-container-index">
   <% @courts.each do |court| %>
-    <div class="card-container">
+
+    <div class="card">
       <%= render partial: 'shared/card', locals: { court: court } %>
     </div>
   <% end %>
+      </div>
 </div>
