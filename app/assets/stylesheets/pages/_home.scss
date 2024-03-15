@@ -45,30 +45,6 @@ nav a:hover {
   margin: 5px;
 }
 
-.card-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.cards {
-  // display: flex;
-  justify-content: space-around;
-  padding: 20px;
-}
-
-.card {
-  width: 200px;
-  padding: 20px;
-  background: #ddd;
-  text-align: center;
-  // display: flex;
-}
-
-.card h2 {
-  margin-bottom: 15px;
-}
-
 footer {
   text-align: center;
   padding: 20px;
