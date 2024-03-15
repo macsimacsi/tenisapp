@@ -1,3 +1,50 @@
-body {
-  background: #a9d5a9;
+.court-cards {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  column-gap: 30px; // Adjust gap between cards if needed
+}
+
+.court-card {
+  width: 83.33333%; // This is equivalent to 10/12 columns
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px; // Spacing between cards
+
+  .image-container {
+    width: 50%; // Half of the card for the image
+    img {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1 / 1; // Makes the image square
+      object-fit: cover; // Ensures the image covers the area without stretching
+    }
+  }
+
+  .text-container {
+    width: 50%; // Remaining half for the text
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    h3 { // Title
+      margin: 0;
+      // Add title styles here
+    }
+
+    p { // Description
+      // Add description styles here
+    }
+
+    .price {
+      // Add price styles here
+    }
+
+    .view-details-button {
+      align-self: flex-end; // Aligns the button to the right
+      margin-top: auto; // Pushes the button to the bottom
+    }
+  }
 }
