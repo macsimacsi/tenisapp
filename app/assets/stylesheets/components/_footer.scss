@@ -1,22 +1,24 @@
 .footer {
-  background: #F4F4F4;
+  background: #88B189;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 100px;
+  height: 80px;
   padding: 0px 50px;
-  color: rgba(0,0,0,0.3);
+  color: rgba(255, 255, 255, 0.857);
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
 }
 .footer-links {
-  display: flex;
+  position: center;
   align-items: center;
 }
 .footer-links a {
-  color: black;
-  opacity: 0.15;
+  color: rgb(255, 255, 255);
+  opacity: 0.40;
   text-decoration: none;
-  font-size: 24px;
-  padding: 0px 10px;
+  font-size: 30px;
+  padding: 5px 30px;
 }
 .footer-links a:hover {
   opacity: 1;

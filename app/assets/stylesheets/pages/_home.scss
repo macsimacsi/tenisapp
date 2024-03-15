@@ -1,7 +1,13 @@
 // Specific CSS for your home-page
-body {
-  font-family: Arial, sans-serif;
+h1 {
+  color: white;
+  font-family: $body-font;
 }
+
+body {
+  background: #a9d5a9;
+}
+
 
 header {
   display: flex;
@@ -49,6 +55,12 @@ footer {
   text-align: center;
   padding: 20px;
   background: #f8f8f8;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 10px; // Reduced the gap between cards
 }
 
 .container-categories {
