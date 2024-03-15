@@ -1,6 +1,7 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://ca-times.brightspotcdn.com/dims4/default/82ecd82/2147483647/strip/false/crop/1200x800+0+0/resize/1200x800!/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2F77%2F53%2F01c3331b45179e421a32bdaefa34%2Flat-tennis-1-thumbnail2.jpg);">
   <div class="container">
     <h1 class="text-center">Find the Tennis Court for you in Buenos Aires!</h1>
+<<<<<<< HEAD
     <section class="search-filters">
       <input type="date" id="date_input">
       <%= link_to "Find a Court", courts_path, class:"btn btn-primary" %>
@@ -13,12 +14,32 @@
       <h2>Why Choose Us?</h2>
       <p>Discover the best courts with detailed descriptions, high-quality images, and user reviews.</p>
     </div>
-  <div class="card">
-    <h2>Add Your Court</h2>
-    <p>Do you have a tennis court? List it on our platform and increase your visibility.</p>
-    <%= link_to "List Your Court", new_court_path, class: "btn btn-secondary" %>
+=======
+        <section class="search-filters">
+          <%= link_to "Find a Court", courts_path, class: "button-main"  %>
+        </section>
   </div>
 </div>
+</section>
+<div class="cards-wrapper">
+<div class="card-container">
+  <div class="card">
+    <h2>Why Choose Us?</h2>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIWfDbPjcqDhM06Cm8AUl4sn9UrSk800SQ4w&usqp=CAU">
+    <p>Dive into our extensive collection of tennis courts, each with detailed descriptions, high-quality images, and authentic user reviews. Make informed decisions and find the perfect court that meets all your needs. Whether you're a beginner or a seasoned player, our platform ensures you have all the information at your fingertips. Start your search now and experience the best in tennis!
+</p>
+  </div>
+>>>>>>> 3d809fe96d1c11273e2b428cb4ecf3dccab116b0
+  <div class="card">
+    <h2>Add Your Court</h2>
+<img src="https://t4.ftcdn.net/jpg/05/72/51/77/360_F_572517781_m8CBsDu2o26mDOXJoA7wDjm3J0Prcvo0.jpg" alt="Tennis court">
+
+    <p>Unlock the full potential of your tennis court by showcasing it on our platform. Connect with a broader audience and watch your bookings soar. Don't miss this opportunity to stand out and attract more tennis enthusiasts to your venue. Join us now and make your court the go-to destination for players in your area!</p>
+    <%= link_to "List Your Court", new_court_path, class: "button-main" %>
+  </div>
+  </div>
+</div>
+<h1 class="text-center">Find exclusive courts in:</h1>
 <section class="categories">
   <div class="container-categories">
     <div class="card-category col-3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://turismo.buenosaires.gob.ar/sites/turismo/files/planetario_agua_1200_2.jpg)">

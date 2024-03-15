@@ -1,26 +1,50 @@
-// Import page-specific CSS files here.
-body {
-  font-family: 'Arial', sans-serif;
-  background: #f4f4f4;
-}
-
-h1 {
-  color: black;
-  font-size: 24px;
-  margin-bottom: 16px;
-  text-align: center;
-}
-
-.card-container {
+.court-cards {
   display: flex;
-  flex-direction: grid;
+  justify-content: center;
+  margin: 0 auto;
+  column-gap: 30px; // Adjust gap between cards if needed
+}
+
+.court-card {
+  width: 83.33333%; // This is equivalent to 10/12 columns
+  display: flex;
+  flex-direction: row;
   justify-content: space-between;
-  gap: 16px;
-  margin-top: 16px;
-  height: 100%;
-  padding: 16px;
-  background-color: #FEFFF3;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin-bottom: 16px;
+  align-items: center;
+  margin-bottom: 20px; // Spacing between cards
+
+  .image-container {
+    width: 50%; // Half of the card for the image
+    img {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1 / 1; // Makes the image square
+      object-fit: cover; // Ensures the image covers the area without stretching
+    }
+  }
+
+  .text-container {
+    width: 50%; // Remaining half for the text
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    h3 { // Title
+      margin: 0;
+      // Add title styles here
+    }
+
+    p { // Description
+      // Add description styles here
+    }
+
+    .price {
+      // Add price styles here
+    }
+
+    .view-details-button {
+      align-self: flex-end; // Aligns the button to the right
+      margin-top: auto; // Pushes the button to the bottom
+    }
+  }
 }
