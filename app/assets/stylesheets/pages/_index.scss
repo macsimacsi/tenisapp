@@ -1,50 +1,44 @@
+// Grid layout for cards
 .court-cards {
-  display: flex;
-  justify-content: center;
-  margin: 0 auto;
-  column-gap: 30px; // Adjust gap between cards if needed
-}
-
-.court-card {
-  width: 83.33333%; // This is equivalent to 10/12 columns
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px; // Spacing between cards
-
-  .image-container {
-    width: 50%; // Half of the card for the image
-    img {
-      width: 100%;
-      height: auto;
-      aspect-ratio: 1 / 1; // Makes the image square
-      object-fit: cover; // Ensures the image covers the area without stretching
-    }
-  }
-
-  .text-container {
-    width: 50%; // Remaining half for the text
+  .card-container-index {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    flex-wrap: wrap ;
+    grid-template-columns: auto auto 1fr; // Updated grid template columns
+    gap: 30px;
+    padding: 15px;
+    margin: 0 auto;
 
-    h3 { // Title
-      margin: 0;
-      // Add title styles here
+    .card {
+      max-width: 350px;
+      margin: 0 auto;
+
+      .card-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 15px;
+
+        h5 {
+          font-size: 1.25rem;
+          color: #333;
+        }
+
+        p {
+          font-size: 1rem;
+          color: #666;
+        }
+
+        .card-footer {
+          align-self: end;
+          text-align: right;
+          padding: 10px 15px;
+        }
+      }
     }
 
-    p { // Description
-      // Add description styles here
-    }
-
-    .price {
-      // Add price styles here
-    }
-
-    .view-details-button {
-      align-self: flex-end; // Aligns the button to the right
-      margin-top: auto; // Pushes the button to the bottom
+    // Responsive adjustments
+    @media (max-width: 992px) {
+      grid-template-columns: repeat(1, 1fr);
     }
   }
 }
