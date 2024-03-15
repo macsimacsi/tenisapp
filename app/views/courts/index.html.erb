@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <h1>Courts</h1>
 <div class="container">
   <div class="row">
@@ -15,4 +16,16 @@
     </div>
     <% end %>
   </div>
+=======
+<div class="title-container">
+  <h1 class="">Courts</h1>
+</div>
+<div class="card-container">
+  <% @courts.each do |court| %>
+    <div class="col-md-4">
+      <%= render partial: 'shared/card', locals: { court: court } %>
+    </div>
+  <% end %>
+</div>
+>>>>>>> ddb81bc4b3a65d1f06f946b9d31aec8a8393450e
 </div>
