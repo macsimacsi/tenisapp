@@ -1,10 +1,27 @@
-<div class="title-container">
-  <h1 class="">Courts</h1>
+<div class="row justify-content-center">
+  <div class="col-sm-8 my-3">
+    <%= form_with url: courts_path, method: :get, class: "d-flex" do %>
+      <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Type a keyword"
+        %>
+      <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+    <% end %>
+  </div>
 </div>
-<div class="card-container">
+
+<div class="title-container">
+  <h1>Courts</h1>
+</div>
+<div class="court-cards">
+<div class="card-container-index">
   <% @courts.each do |court| %>
+    <div class="row justify-content-center">
     <div class="col-md-4">
       <%= render partial: 'shared/card', locals: { court: court } %>
     </div>
+    <div>
   <% end %>
+      </div>
 </div>
