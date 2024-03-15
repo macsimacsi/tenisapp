@@ -1,6 +1,10 @@
 .footer {
   background: #88B189;
   display: flex;
+  position: fixed;
+  bottom: 0;
+  left: 0; /* Ensure the footer stays at the left edge of the screen */
+  right: 0; /* Ensure the footer stays at the right edge of the screen */
   align-items: center;
   justify-content: space-between;
   height: 80px;
@@ -8,7 +12,16 @@
   color: rgba(255, 255, 255, 0.857);
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
+  z-index: 999; /* Ensure the footer is on top of other content */
+
+  /* Add a box shadow for a subtle elevation effect */
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
 }
+
+body {
+  margin-bottom: 80px; /* Ensure content doesn't get hidden behind the footer */
+}
+
 .footer-links {
   position: center;
   align-items: center;
